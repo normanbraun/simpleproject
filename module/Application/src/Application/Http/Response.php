@@ -57,7 +57,7 @@ class Response
     public function render()
     {
         if ($this->viewModel) {
-            $content     = $this->viewModel->toString();
+            $content     = $this->viewModel->getContent();
             $contentType = $this->viewModel->getContentType();
 
         } else {

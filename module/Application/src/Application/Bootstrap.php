@@ -72,6 +72,6 @@ class Bootstrap
      */
     protected function loadServiceContainer()
     {
-        return require_once __DIR__ . '/../../config/services.config.php';
+        return require_once __DIR__ . '/../../../../config/services.config.php';
     }
 }

@@ -1,7 +1,7 @@
 {
     "autoload": {
         "psr-4": {
-            "Application\\": "src/Application"
+            "Application\\": "module/Application/src/Application"
         }
     },
     "require-dev": {
@@ -10,6 +10,7 @@
     "require": {
         "filp/whoops": "^2.1",
         "pimple/pimple": "^3.2",
-        "altorouter/altorouter": "^1.2"
+        "altorouter/altorouter": "^1.2",
+        "fabpot/goutte": "^3.2"
     }
 }

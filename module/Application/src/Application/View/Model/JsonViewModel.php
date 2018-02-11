@@ -35,7 +35,7 @@ class JsonViewModel implements ViewModelInterface
     /**
      * {@inheritdoc}
      */
-    public function toString()
+    public function getContent()
     {
         return json_encode($this->viewVars);
     }

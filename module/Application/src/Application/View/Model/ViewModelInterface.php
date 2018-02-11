@@ -12,9 +12,9 @@ interface ViewModelInterface
     public function getContentType();
 
     /**
-     * Renders view model content into a string
+     * Returns view model content as a string
      *
      * @return string
      */
-    public function toString();
+    public function getContent();
 }
