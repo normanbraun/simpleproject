@@ -10,6 +10,7 @@ $serviceContainer['Application.Config'] = function ($serviceContainer) {
     return $config;
 };
 
+/*
 $serviceContainer['Session.Storage.Default'] = function ($serviceContainer) {
     return new Application\Session\Storage\Http();
 };
@@ -19,11 +20,21 @@ $serviceContainer['Session.Adapter'] = function ($serviceContainer) {
     $sessionAdapter->setSessionStorage($serviceContainer['Session.Storage.Default']);
     return $sessionAdapter;
 };
+*/
 
 $serviceContainer['Router.Http'] = function ($serviceContainer) {
     $router = new AltoRouter();
     $router->map('GET', '/', 'Application\Controller\IndexController:indexAction', 'home');
     return $router;
+};
+
+$serviceContainer['Db.Adapter'] = function ($serviceContainer) {
+    $applicationConfig = $serviceContainer['Application.Config'];
+    $databaseConfig = $applicationConfig['db.config'];
+    /** @var Application\Db\Adapter\AdapterInterface $adapter */
+    $adapter = new $databaseConfig['adapter'];
+    $adapter->setConnectionParameters($databaseConfig['connectionParameters']);
+    return $adapter;
 };
 
 return $serviceContainer;

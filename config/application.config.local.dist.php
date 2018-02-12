@@ -1,8 +1,10 @@
 <?php
 
 return [
-    'db' => [
-        'user'     => '<user>',
-        'password' => '<pass>',
+    'db.config' => [
+        'connectionParameters' => [
+            'username' => '<user>',
+            'password' => '<pass>',
+        ],
     ]
 ];
